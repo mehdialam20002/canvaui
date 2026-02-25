@@ -21,11 +21,9 @@
 .layer-item.selected {
     border-color: var(--accent-color);
     background-color: #f0fdf4;
-    /* Very subtle green or base accent tint, let's use blue */
     background-color: #eff6ff;
     border-width: 2px;
     padding: calc(0.75rem - 1px);
-    /* Prevent layout jump */
 }
 
 .layer-color-indicator {

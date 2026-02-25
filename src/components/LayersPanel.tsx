@@ -3,7 +3,7 @@ import { Shape } from '../types';
 import './LayersPanel.css';
 
 interface LayersPanelProps {
-    shapes: Shape[]; // Ordered oldest to newest, but we map them in reverse visually if desired
+    shapes: Shape[]; 
     selectedId: string | null;
     hoveredId: string | null;
     onSelect: (id: string) => void;
@@ -19,7 +19,6 @@ export const LayersPanel: React.FC<LayersPanelProps> = ({
     onHover,
     onDelete,
 }) => {
-    // We want to show the newest shapes at the top of the list
     const reversedShapes = [...shapes].reverse();
 
     return (
