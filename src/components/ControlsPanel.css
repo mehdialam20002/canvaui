@@ -1,0 +1,98 @@
+.divider-h {
+    height: 1px;
+    width: 100%;
+    background-color: var(--border-color);
+    margin: 0.5rem 0;
+}
+
+.color-swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.color-swatch.selected {
+    border-color: var(--text-primary);
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--text-primary);
+}
+
+.custom-color-wrapper {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.color-picker {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.custom-color-wrapper.selected {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--text-primary);
+}
+
+.position-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px;
+    aspect-ratio: 1;
+    background-color: var(--border-color);
+    padding: 4px;
+    border-radius: var(--radius-md);
+}
+
+.grid-cell {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.grid-cell:hover {
+    background-color: var(--accent-color);
+    transform: scale(0.95);
+}
+
+.grid-cell:active {
+    transform: scale(0.9);
+}
+
+.grid-cell.center {
+    position: relative;
+}
+
+.grid-cell.center::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+}
+
+.grid-cell.center:hover::after {
+    background-color: white;
+}
