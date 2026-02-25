@@ -12,12 +12,12 @@ export type PositionGrid =
     | 'bottom-right';
 
 export interface Shape {
-    id: string; // Unique ID
+    id: string; 
     type: ShapeType;
     color: string;
-    size: number; // For simplicity, we assume square bounding box (e.g., radius = size/2)
-    x: number; // Center X
-    y: number; // Center Y
+    size: number; 
+    x: number; 
+    y: number; 
     createdAt: number;
 }
 
