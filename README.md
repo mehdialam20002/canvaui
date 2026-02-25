@@ -69,6 +69,4 @@ No third-party canvas libraries were used
 
 Built with focus on performance and clean architecture
 
-📸 Preview
 
-(Add screenshots here)
