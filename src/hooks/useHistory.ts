@@ -12,7 +12,6 @@ export function useHistory<T>(initialState: T) {
                 const nextState =
                     typeof newState === 'function' ? (newState as Function)(prev[currentIndex]) : newState;
 
-                // Remove future history if we're not at the end
                 const newHistory = prev.slice(0, currentIndex + 1);
                 return [...newHistory, nextState];
             });

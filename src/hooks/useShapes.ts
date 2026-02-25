@@ -5,7 +5,6 @@ import { useHistory } from './useHistory';
 const STORAGE_KEY = 'canvas_shapes';
 
 export function useShapes() {
-    // Try to load initial state from local storage securely
     const getInitialShapes = (): Shape[] => {
         try {
             const stored = localStorage.getItem(STORAGE_KEY);
@@ -26,7 +25,6 @@ export function useShapes() {
         canRedo,
     } = useHistory<Shape[]>(getInitialShapes());
 
-    // Save to local storage whenever shapes change
     useEffect(() => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(shapes));
     }, [shapes]);
