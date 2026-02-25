@@ -23,7 +23,6 @@ function App() {
     canRedo,
   } = useShapes();
 
-  // Helper to generate unique ID
   const generateId = () => Math.random().toString(36).substring(2, 9);
 
   const handleAddShape = (shapeData: Omit<Shape, 'id' | 'createdAt'>) => {
@@ -40,10 +39,8 @@ function App() {
     updateShape(id, updates);
   }, [updateShape]);
 
-  // Handle keyboard shortcuts (Delete)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't trigger if user is typing in an input
       if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
 
       if ((e.key === 'Delete' || e.key === 'Backspace') && selectedId) {
@@ -59,8 +56,7 @@ function App() {
   const handleExport = () => {
     const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
     if (canvas) {
-      // Create a temporary canvas to draw a white background if needed,
-      // but standard transparent PNG is also good for SaaS tools. We'll stick to standard.
+
       const url = canvas.toDataURL('image/png');
       const link = document.createElement('a');
       link.download = 'canvas-export.png';
